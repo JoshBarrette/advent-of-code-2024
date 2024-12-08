@@ -47,6 +47,10 @@ public class Day6 {
         System.out.println("total:" + total);
     }
 
+    public static void seeker() {
+
+    }
+
     public static void parse() {
         int[] newPos = {0 , 0};
         grid.get(guardPos[0]).set(guardPos[1], CHECKED);
