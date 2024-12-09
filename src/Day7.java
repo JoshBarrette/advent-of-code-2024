@@ -30,11 +30,15 @@ public class Day7 {
     public static boolean parse(long goal, long current, long[] nums, int startIdx) {
         if (startIdx == nums.length && goal == current) {
             return true;
-        }else if (startIdx >= nums.length) {
+        } else if (startIdx >= nums.length) {
             return false;
         } else if (parse(goal, current + nums[startIdx], nums, startIdx + 1)) {
             return true;
         } else if (parse(goal, current * nums[startIdx], nums, startIdx + 1)) {
+            return true;
+        } else if (current != 0 && parse(goal, Long.parseLong((current + "") + (nums[startIdx] + "")), nums, startIdx + 1)) {
+            return true;
+        } else if (current != 0 && parse(goal, nums[startIdx], nums, startIdx + 1)) {
             return true;
         }
 
