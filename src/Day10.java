@@ -30,8 +30,6 @@ public class Day10 {
                 if (grid.get(row).get(col) == 0) {
                     HashSet<String> set = new HashSet<>();
                     helper(row, col, 0, set);
-
-                    total += set.size();
                 }
             }
         }
@@ -43,7 +41,7 @@ public class Day10 {
         } else if (grid.get(row).get(col) != current) {
             return;
         } else if (current == 9) {
-            set.add((row + "") + "," + (col + ""));
+            total++;
             return;
         }
 
